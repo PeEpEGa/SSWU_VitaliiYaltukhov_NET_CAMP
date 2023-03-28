@@ -1,4 +1,5 @@
-﻿Console.Write("Please enter amount of rows: ");
+//Вітаю. Перше завдання по створенню репозиторію Ви виконали.
+Console.Write("Please enter amount of rows: ");
 int rows = 0;
 Int32.TryParse(Console.ReadLine(), out rows);
 
