@@ -12,8 +12,8 @@ public class Simulator : IMediator
         _waterTower = waterTower;
         _pump = pump;
     }
-    public override Consume()
+    public override void Consume()
     {
-        
+
     }
 }
