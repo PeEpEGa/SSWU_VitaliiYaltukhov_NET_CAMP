@@ -2,10 +2,10 @@ namespace Homework2;
 
 public class WaterTower
 {
-    private readonly int _capacity;
-    private int _currentLevel;
-    private Pump[] _pump;
     public int TowerId;
+    private readonly double _capacity;
+    private double _currentLevel;
+    private Pump[] _pumps;
 
     public int MaxLevelWater 
     { 
@@ -20,19 +20,17 @@ public class WaterTower
 
     public WaterTower()
     {
-        TowerId = CreateId();
+        TowerId = SetId();
     }
     public WaterTower(int maxLevelWater, Pump[] pump)
     {
         _capacity = maxLevelWater;
         _pump = pump;
-        TowerId = CreateId();
+        TowerId = SetId();
     }
 
-    private int CreateId()
+    private void SetId()
     {
-        //temporary
-        return 1;
     } 
 
     public override string ToString()

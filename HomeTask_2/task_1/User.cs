@@ -2,6 +2,7 @@ namespace Homework2;
 
 public class User
 {
+    public int Id;
     private double _consumption;
 
     public User(int consumption)
@@ -12,5 +13,13 @@ public class User
     public override string ToString()
     {
         return $"User consumption: {_consumption}.";
+    }
+
+    public void ConsumeWater()
+    {
+    }
+    
+    private void SetId()
+    {
     }
 }

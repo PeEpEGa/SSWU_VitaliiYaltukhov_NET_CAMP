@@ -2,6 +2,7 @@ namespace Homework2;
 
 public class Pump
 {
+    public int Id;
     private readonly double _power;
     private bool _isOn = false;
 
@@ -17,6 +18,10 @@ public class Pump
     }
 
     public void ChangeState()
+    {
+    }
+    
+    private void SetId()
     {
     }
 
