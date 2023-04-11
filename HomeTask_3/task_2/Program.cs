@@ -1,4 +1,5 @@
-﻿//task2.1
+﻿// Користувач бере воду в вежі. Має бути зв'язок.
+//task2.1
 string text1 = "Avkweprojg  ger w ef R w g WEG  ger    f wfF WF fw f ff f fd ddA  f AA fw";
 
 int result1 = StringHelper.IndexOfSecondSubstring(text1, "ger");
