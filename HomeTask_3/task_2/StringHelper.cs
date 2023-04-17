@@ -3,19 +3,20 @@ public static class StringHelper
     public static int IndexOfSecondSubstring(string text, string wordToFind)
     {
         int startIndex = 0;
-        int index = text.IndexOf(wordToFind, startIndex);
+        int index = text.IndexOf(wordToFind, startIndex)
+            Якщо першого слова немає, то нема чого шукати друге...
         index = text.IndexOf(wordToFind, (startIndex = index) + 1);
         return index;
     }
 
     public static int AmountOfWordsWithFirstCapitalLetter(string text)
-    {
+    {// лінки тут те, що треба. Але хочеться, щоб і стрічки відчували...
         return text.Split(' ', StringSplitOptions.RemoveEmptyEntries)
             .Where(n => Char.IsUpper(n.FirstOrDefault())).Count();
     }
 
     public static string ChangeWordsWithDoubleLetters(string text, string wordToChange)
-    {
+    {// Ця регулярка не досконала...
         return Regex.Replace("(\\w)\\1", wordToChange);
         return res;
         StringBuilder result = new StringBuilder();
