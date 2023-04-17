@@ -1,0 +1,5 @@
+Number of apartments: 4 Quoter: 2
+1 address1 user1 240 335 17.04.23
+2 address2 user2 46 112 17.04.23
+3 address3 user3 310 520 17.04.23
+4 address4 user4 89 196 17.04.23
