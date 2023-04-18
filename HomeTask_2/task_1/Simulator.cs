@@ -7,7 +7,7 @@ public class Simulator
     private Pump[] _pumps;
 
     public Simulator(User[] users, WaterTower waterTower, Pump pumps)
-    {
+    {// треба робити глибокі копії
         _users = users;
         _waterTower = waterTower;
         _pumps = pumps;
