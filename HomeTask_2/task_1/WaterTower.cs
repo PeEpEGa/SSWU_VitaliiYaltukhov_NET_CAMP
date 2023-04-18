@@ -1,5 +1,5 @@
 namespace Homework2;
-
+// Хто і де включає насос? Функціонал не до кінця продуманий.
 public class WaterTower
 {
     public int TowerId;
