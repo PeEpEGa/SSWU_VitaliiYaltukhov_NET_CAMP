@@ -11,7 +11,7 @@ public class Fence : IComparable<Fence>
     public Fence(List<Tree> trees)
     {
         Trees = trees;
-        Length = 0;//todo
+        Length = 0;
     }
 
     private Tree NextToTop(Stack<Tree> stack)
@@ -45,17 +45,19 @@ public class Fence : IComparable<Fence>
 
     public Tree[] AddFence(List<Tree> trees, int n)
     {
+        //Graham Scan
+
         if(trees.Count == 0)
         {
             return new Tree[] { };
         }
-        // Find the bottommost point
+        // Find the bottommost tree
         double ymin = trees[0].Y;
         int min = 0;
         for (int i = 1; i < n; i++)
         {
             double y = trees[i].Y;
-            // Pick the bottom-most or chose the left most point in case of tie
+            // Pick the bottom-most or chose the left most tree in case of tie
             if ((y < ymin) || (ymin == y && trees[i].X < trees[min].X))
             {
                 ymin = trees[i].Y;
@@ -63,24 +65,24 @@ public class Fence : IComparable<Fence>
             }
         }
 
-        // Place the bottom-most point at first position
+        // Place the bottom-most tree at first position
         Swap(trees, 0, min);
 
         GlobalVariables.BottomTree = trees[0];
 
         trees.Sort(1, n - 1, Tree.SortTreesAscending());
 
-        // If two or more points make same angle with p0. Remove all but the one that is farthest from p0
+        // If two or more trees make same angle with first tree. Remove all but the one that is farthest from first tree
         for (int i = 1; i < trees.Count; i++)
         {
-            // Keep removing i while angle of i and i+1 is same with respect to p0
+            // Keep removing i while angle of i and i+1 is same with respect to first tree
             while (i < trees.Count - 1 && Orientation(GlobalVariables.BottomTree, trees[i], trees[i + 1]) == 0)
             {
                 trees.Remove(trees[i]);
             }
         }
 
-        // If modified array of points has less than 3 points, convex hull is not possible.
+        // If modified list of points has less than 3 points, fence is not possible.
         if (trees.Count < 3) return new Tree[] { };
 
         Stack<Tree> result = new Stack<Tree>();
@@ -88,7 +90,7 @@ public class Fence : IComparable<Fence>
         result.Push(trees[1]);
         result.Push(trees[2]);
 
-        // Process remaining n-3 points
+        // Process remaining points
         for (int i = 3; i < trees.Count; i++)
         {
             while (Orientation(NextToTop(result), result.Peek(), trees[i]) != 2)
@@ -128,10 +130,27 @@ public class Fence : IComparable<Fence>
         }
         return res.ToString();
     }
-
-    //todo
     public int CompareTo(Fence fence)
     {
         return Length > fence.Length ? 1 : -1;
+    }
+
+    public static bool operator>(Fence first, Fence second)
+    {
+        return first.Length > second.Length;
+    }
+
+    public static bool operator<(Fence first, Fence second)
+    {
+        return first.Length < second.Length;
+    }
+
+    public static bool operator !=(Fence first, Fence second)
+    {
+        return first.Length != second.Length;
+    }
+    public static bool operator ==(Fence first, Fence second)
+    {
+        return first.Length == second.Length;
     }
 }
