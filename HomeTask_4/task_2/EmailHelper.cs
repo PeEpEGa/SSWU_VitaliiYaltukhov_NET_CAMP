@@ -130,7 +130,7 @@ public static class EmailHelper
                     }
                     localPart = email.Substring(0, indOfLastQuote);
                     domain = email.Substring(indOfLastQuote + 2);
-
+// такі константи слід винести за межі коду метода
                     if (localPart.Length > 64 || domain.Length > 255)
                     {
                         continue;
