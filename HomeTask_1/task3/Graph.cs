@@ -1,5 +1,5 @@
 namespace task3;
-
+//Графи мають недолік, що з ними важко працювати з великими розмірностями...
 public class Graph
 {
     private int _vertices;
