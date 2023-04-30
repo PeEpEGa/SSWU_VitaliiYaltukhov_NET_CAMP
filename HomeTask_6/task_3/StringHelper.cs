@@ -22,22 +22,29 @@ namespace task2._1_sigma_
                 
                 temp.Append(words.Substring(i, indOfSpace - i));
 
-                //find word
+                //find first and last words
                 int indOfFirstWord = words.IndexOf(temp.ToString(), i);
                 int indOfLastWord = words.LastIndexOf(temp.ToString());
+
+                //check if they're the same (if not remove them)
                 if (indOfFirstWord != indOfLastWord)
                 {
-                    indOfFirstWord = indOfLastWord;
-                    while (indOfLastWord != -1)
+                    bool onlyOne = true;
+                    //remove identical
+                    while (indOfLastWord != indOfFirstWord)
                     {
                         int indOfSpc = words.IndexOf(' ', indOfLastWord);
-                        if (indOfSpc - indOfLastWord == temp.Length)
+                        int a = words.LastIndexOf(' ', indOfLastWord);
+                        if (indOfSpc - indOfLastWord == temp.Length && a == indOfLastWord - 1)
                         {
+                            onlyOne = false;
+                            indOfFirstWord = -1;
                             words = words.Remove(indOfLastWord, indOfSpc - indOfLastWord);
                         }
                         indOfLastWord = words.LastIndexOf(temp.ToString(), indOfLastWord - 1);
                     }
-                    if (indOfFirstWord == indOfLastWord)
+                    //if nothing has been removed return this word
+                    if (onlyOne)
                     {
                         yield return temp.ToString();
                         i = indOfSpace;
