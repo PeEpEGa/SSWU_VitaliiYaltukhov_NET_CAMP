@@ -1,6 +1,6 @@
 using System.Text;
 public class Fence : IComparable<Fence>
-{
+{// Порушення інкапсуляції
     public List<Tree> Trees { get; set; }
     public double Length { get; set; }
     public Fence()

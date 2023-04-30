@@ -1,4 +1,5 @@
-﻿Console.WriteLine("Hello, World!");
+//Vitalii	Yaltukhov 		90	20	0	90	90	95	98	102,6. вітаю Вас у 2 турі.
+Console.WriteLine("Hello, World!");
 
 var trees = new List<Tree>();
 var trees1 = new List<Tree>();

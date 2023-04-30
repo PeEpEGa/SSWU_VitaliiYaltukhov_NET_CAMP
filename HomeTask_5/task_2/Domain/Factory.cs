@@ -7,7 +7,7 @@ using task5._2_sigma_.Domain.Services.Interfaces;
 using task5._2_sigma_.Domain.Services;
 
 using DataAccessFactory = task5._2_sigma_.DataAccess.Factory;
-
+//Добре, що використовуєте абстракцію та намагаєтесь використовувати паттерни.
 namespace task5._2_sigma_.Domain
 {
     internal class Factory
