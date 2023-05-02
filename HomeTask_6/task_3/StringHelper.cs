@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 namespace task2._1_sigma_
 {
     public static class StringHelper
-    {
+    {// Ідея добра, але заплутано пишете.Можна використовувати стандартні функції.
         public static IEnumerable<string> FindUniqueWords(string text)
         {
             string words = " " + Regex.Replace(text, @"\s+", " ") + " ";
