@@ -30,7 +30,7 @@ namespace task2._1_sigma_
         }
     }
 
-
+// Здійсніть перевірку виконання для парного і непарного значення розміру масиву!!!
     public class ZigzagMatrix
     {
         private int[,] _matrix;
