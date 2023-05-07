@@ -12,7 +12,7 @@ namespace task2._1_sigma_
                     arr.Add(arrays[i][j]);
                 }
             }
-
+// Оригінально.
             while (arr.Count() != 0)
             {
                 int element = arr.Min();
