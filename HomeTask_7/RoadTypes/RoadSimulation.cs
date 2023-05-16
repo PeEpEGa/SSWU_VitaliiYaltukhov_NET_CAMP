@@ -9,7 +9,7 @@ using task2._2_sigma_.Contracts;
 using task2._2_sigma_.RoadTypes.Interfaces;
 
 namespace task2._2_sigma_.RoadTypes
-{
+{//загалом цікаве і не стандартне проєктування. Прохання показати на занятті.
     internal class RoadSimulation
     {
         private System.Timers.Timer _timerSimulation;
